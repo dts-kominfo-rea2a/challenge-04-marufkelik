@@ -10,18 +10,18 @@ const dates = [
 // TODO: Buatlah fungsi createDate
 // const createDate = null;
 const createDate = (datanya, n) => {
-  const urut = datanya.sort();
   const convert = [];
   for (let data=0; data < datanya.length ; data++)
   {
-    const ubahMilikeDetik = Date.parse(urut[data])/1000;
+    const ubahMilikeDetik = Date.parse(datanya[data])/1000;
     convert.push(ubahMilikeDetik)
   }
   let hasil = null;
-  if (n == null) {hasil = convert.join("-");}
+  if (n == null) {hasil = convert.sort().join("-");}
   else {hasil = convert[n].toString()}
   return hasil;
 }
+
 // const stringcob = dates.join(", ");
 // const naha = Date.parse(benda[4]);
 
